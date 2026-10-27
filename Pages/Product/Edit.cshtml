@@ -1,0 +1,50 @@
+﻿@page "{id:int}"
+@model SewStitchLab7.Pages.EditModel
+
+<h2>Edit Product</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Product.ProductId" />
+
+    <div class="mb-3">
+        <label asp-for="Product.ProductName"></label>
+        <input asp-for="Product.ProductName" class="form-control" />
+        <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Category"></label>
+        <input asp-for="Product.Category" class="form-control" />
+        <span asp-validation-for="Product.Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Material"></label>
+        <input asp-for="Product.Material" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Color"></label>
+        <input asp-for="Product.Color" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Size"></label>
+        <input asp-for="Product.Size" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Price"></label>
+        <input asp-for="Product.Price" class="form-control" />
+        <span asp-validation-for="Product.Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Product.Stock"></label>
+        <input asp-for="Product.Stock" class="form-control" />
+        <span asp-validation-for="Product.Stock" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Update Product</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

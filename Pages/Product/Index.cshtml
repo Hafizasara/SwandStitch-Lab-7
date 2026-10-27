@@ -1,0 +1,48 @@
+﻿@page
+@model SewStitchLab7.Pages.Product.IndexModel
+
+<h2>Sew &amp; Stitch - Product Management</h2>
+
+<p>
+    <a asp-page="/Product/Create" class="btn btn-primary">Add Product</a>
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Material</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.Category</td>
+                <td>@product.Material</td>
+                <td>@product.Color</td>
+                <td>@product.Size</td>
+                <td>@product.Price</td>
+                <td>@product.Stock</td>
+                <td>
+                    <a asp-page="Edit"
+                       asp-route-id="@product.ProductId"
+                       class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-page="Delete"
+                       asp-route-id="@product.ProductId"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
